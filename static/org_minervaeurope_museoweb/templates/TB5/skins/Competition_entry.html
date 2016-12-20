@@ -1,0 +1,51 @@
+<span tal:omit-tag="">
+	<div class="details">
+		<h2 tal:content="structure RecordDetail/competitiondetail_title" />
+		<div class="clear spacer"></div>
+		<dl class="properties">
+			<span tal:omit-tag="" tal:condition="php: RecordDetail['competitiondetail_duedate']!=''">
+				<dt tal:content="structure php: __T('MW_COMPETITION_DUEDATE')"></dt>
+				<dd tal:content="php: MW_formatDate(RecordDetail['competitiondetail_duedate'])" ></dd>
+			</span>
+			<span tal:omit-tag="" tal:condition="php: RecordDetail['competitiondetail_pubdate']!=''">
+				<dt tal:content="structure php: __T('MW_COMPETITION_PUBDATE')"></dt>
+				<dd tal:content="php: MW_formatDate(RecordDetail['competitiondetail_pubdate'])"></dd>
+			</span>
+			<span tal:omit-tag="" tal:condition="php: RecordDetail['competitiondetail_office']!=''">
+				<dt tal:content="structure php: __T('MW_COMPETITION_OFFICE')"></dt>
+				<dd tal:content="structure RecordDetail/competitiondetail_office"></dd>
+			</span>
+			<span tal:omit-tag="" tal:condition="php: RecordDetail['competitiondetail_numdate']!=''">
+				<dt tal:content="structure php: __T('MW_COMPETITION_NUMERDATE')"></dt>
+				<dd tal:content="structure RecordDetail/competitiondetail_numdate"></dd>
+			</span>
+			<span tal:omit-tag="" tal:condition="php: RecordDetail['competitiondetail_auction']!=''">
+				<dt tal:content="structure php: __T('MW_COMPETITION_AUCTION')"></dt>
+				<dd tal:content="structure RecordDetail/competitiondetail_auction"></dd>
+			</span>
+			<span tal:omit-tag="" tal:condition="php: RecordDetail['competitiondetail_decree']!=''">
+				<dt tal:content="structure php: __T('MW_COMPETITION_DECREE')"></dt>
+				<dd tal:content="structure RecordDetail/competitiondetail_decree"></dd>
+			</span>
+			<span tal:omit-tag="" tal:condition="php: RecordDetail['competitiondetail_url']!=''">
+				<dt tal:content="php: __T('MW_EXTERNAL_LINK')"></dt>
+				<dd tal:content="structure php: org_glizy_helpers_Link::formatLink(RecordDetail['competitiondetail_url'])"></dd>
+			</span>
+		</dl>
+		<div class="clear"></div>
+		<span tal:omit-tag="" tal:condition="php: !glz_empty(RecordDetail['competitiondetail_info'])">
+			<h3 tal:content="structure php: __T('MW_COMPETITION_INFO')" />
+			<span tal:omit-tag="" tal:content="structure RecordDetail/competitiondetail_info" />
+		</span>
+		<span tal:omit-tag=""  tal:condition="php: !glz_empty(RecordDetail['competitiondetail_note'])">
+			<h3 tal:content="structure php: __T('MW_COMPETITION_NOTE')" />
+			<span tal:omit-tag="" tal:content="structure RecordDetail/competitiondetail_note" />
+		</span>
+		<span tal:omit-tag="" tal:condition="php: count(RecordDetail['media'])">
+			<h4 tal:content="php: __T('MW_LINKED_MEDIA')" class="downloadTitle" />
+			<ul class="downloadList">
+				<li tal:repeat="item RecordDetail/media" tal:content="structure item/media_id/__html__" />
+			</ul>
+		</span>
+	</div>
+</span>

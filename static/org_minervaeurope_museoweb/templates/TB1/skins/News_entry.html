@@ -1,0 +1,15 @@
+<span tal:omit-tag="">
+	<h2 tal:content="structure RecordDetail/newsdetail_title"></h2>
+	<h4 class="subtitle" tal:content="php: MW_formatDate(RecordDetail['newsdetail_startDate'])"></h4>
+	<h4 tal:content="structure RecordDetail/newsdetail_place"></h4>
+	<span tal:condition="RecordDetail/newsdetail_image/mediaId" tal:content="structure RecordDetail/newsdetail_image/__html__" />
+	<span tal:content="structure RecordDetail/newsdetail_body" tal:omit-tag="" />
+	<p tal:condition="RecordDetail/newsdetail_url" tal:content="structure php: __Link::formatLink(RecordDetail['newsdetail_url'], RecordDetail['newsdetail_labelurl'])" ></p>
+	<div class="clear"></div>
+	<span tal:omit-tag="" tal:condition="php: count(RecordDetail['media'])">
+		<h4 tal:content="php: __T('MW_LINKED_MEDIA')" class="downloadTitle" />
+		<ul class="downloadList">
+			<li tal:repeat="item RecordDetail/media" tal:content="structure item/media_id/__html__" />
+		</ul>
+	</span>
+</span>

@@ -1,0 +1,22 @@
+<span tal:omit-tag="">
+	<form method="post" role="form" action="" tal:attributes="id LoginBox/id">
+		<div class="alert alert-danger" tal:condition="LoginBox/errorLabel">
+			<p class="error" tal:condition="LoginBox/errorLabel" tal:content="structure LoginBox/errorLabel"/>
+		</div>
+		<div class="form-group">
+			<label for="" tal:attributes="for LoginBox/userField" tal:content="structure LoginBox/userLabel"></label>
+			<input type="text" class="form-control" tal:attributes="id LoginBox/userField; name LoginBox/userField"/>
+		</div>
+		<div class="form-group">
+			<label for="" tal:attributes="for LoginBox/passwordField" tal:content="structure LoginBox/passwordLabel"></label>
+			<input type="password" class="form-control" tal:attributes="id LoginBox/passwordField; name LoginBox/passwordField"/>
+		</div>
+		<div class="formButtons">
+			<input class="btn btn-primary" type="submit" value="" tal:attributes="name LoginBox/submitName;structure value LoginBox/confirmLabel"/>
+		</div>
+	</form> 
+	<!--div>
+		<a class="" tal:attributes="href LoginBox/__url__" tal:content="structure LoginBox/registrationLabel"></a><br />
+		<a class="" tal:attributes="href LoginBox/askPasswordUrl" tal:content="structure LoginBox/askPasswordLabel"></a>
+	</div-->
+</span>

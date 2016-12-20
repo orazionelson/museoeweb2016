@@ -1,0 +1,66 @@
+<span tal:omit-tag="">
+	<h2 tal:content="structure Route/title" />
+	<h4 class="subtitle" tal:condition="Route/author"  tal:content="structure Route/author" />
+	<span tal:omit-tag="" tal:content="structure Route/description"></span>
+	<div class="searchResults" tal:condition="php: count(Route['arguments'])">
+		<h3 tal:content="php: __T('MW_ROUTES_LIST1')"/>
+		<div tal:repeat="item Route/arguments" tal:attributes="class item/__cssClass__">
+			<span tal:omit-tag="" tal:define="description php:MW_strtrim(strip_tags(item['routethemedetail_description']), 200, '...')"/>
+			<div class="around">
+				<h4><a href="" tal:attributes="href item/__url__; structure title item/routethemedetail_title" tal:content="structure item/routethemedetail_title"></a></h4>
+				<h4 class="subtitle" tal:condition="item/routethemedetail_author" tal:content="structure item/routethemedetail_author" />
+				<p tal:content="structure description" tal:omit-tag="" />
+				<a tal:attributes="href item/__url__; structure title item/routethemedetail_title"><span tal:omit-tag="" tal:content="php: __T('MW_MORE')"/></a>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<div class="searchResults" tal:condition="php: count(Route['themes'])">
+		<h3 tal:content="php: __T('MW_ROUTES_LIST2')"/>
+		<div tal:repeat="item Route/themes" tal:attributes="class item/__cssClass__">
+			<span tal:omit-tag="" tal:define="description php:MW_strtrim(strip_tags(item['routedetail_description']), 200, '...')"/>
+			<div class="left" tal:condition="php: item['image']!=''">
+				<a href="" tal:attributes="href item/__url__; structure title item/routedetail_title"><img tal:attributes="src item/image/thumbnailSrc;structure alt item/routedetail_title;structure title item/routedetail_title;width item/image/thumbnailWidth;height item/image/thumbnailHeight"/></a>
+			</div>
+			<div tal:attributes="class php: item['image']!='' ? 'right' : 'around'">
+				<h4><a href="" tal:attributes="href item/__url__; structure title item/routedetail_title" tal:content="structure item/routedetail_title"></a></h4>
+				<h4 class="subtitle" tal:condition="item/routedetail_author" tal:content="structure item/routedetail_author" />
+				<p tal:content="structure description" tal:omit-tag="" />
+				<a tal:attributes="href item/__url__; structure title item/routedetail_title"><span tal:omit-tag="" tal:content="php: __T('MW_MORE')"/></a>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<div class="searchResults" tal:condition="php: count(Route['catalog'])">
+		<h3 tal:content="php: __T('MW_ROUTES_LIST3')"/>
+		<div tal:repeat="item Route/catalog" tal:attributes="class item/__cssClass__">
+			<div class="left" tal:condition="php: !is_null(item['thumbnailSrc'])">
+				<a href="" tal:attributes="href item/__url__; structure title item/title"><img tal:attributes="src item/thumbnailSrc;structure alt item/title;structure title item/title;width item/thumbnailWidth;height item/thumbnailHeight"/></a>
+			</div>
+			<div tal:attributes="class php: item['image']!='' ? 'right' : 'around'">
+				<h4><a href="" tal:attributes="href item/__url__; structure title item/title" tal:content="structure item/title">title</a></h4>
+				<h4 class="subtitle" tal:content="structure item/author" />
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<div class="searchResults" tal:condition="php: count(Route['site'])">
+		<h3 tal:content="php: __T('MW_TR_LINKEDSITES')"/>
+		<div tal:repeat="item Route/site" tal:attributes="class item/__cssClass__">
+			<div class="left" tal:condition="php: item['touristsitedetail_image1'] gt 0">
+				<a href="" tal:attributes="href item/__url__; structure title item/touristsitedetail_name"><img tal:attributes="src item/thumbnailSrc;structure alt item/touristsitedetail_name;structure title item/touristsitedetail_name;width item/thumbnailWidth;height item/thumbnailHeight"/></a>
+			</div>
+			<div tal:attributes="class php: item['image']!='' ? 'right' : 'around'">
+				<h4><a href="" tal:attributes="href item/__url__; structure title item/touristsitedetail_name" tal:content="structure item/touristsitedetail_name"></a></h4>
+				<span tal:omit-tag="" tal:condition="item/touristsitedetail_category"><span tal:omit-tag="" tal:content="structure item/touristsitedetail_category" />, </span>
+				<span tal:omit-tag="" tal:condition="item/touristsitedetail_country"><span tal:omit-tag="" tal:content="structure item/touristsitedetail_country" />, </span>
+				<span tal:omit-tag="" tal:condition="item/touristsitedetail_region"><span tal:omit-tag="" tal:content="structure item/touristsitedetail_region" />, </span>
+				<span tal:omit-tag="" tal:condition="item/touristsitedetail_province"><span tal:omit-tag="" tal:content="structure item/touristsitedetail_province" /></span>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div class="clear"></div>
+	</div>
+</span>

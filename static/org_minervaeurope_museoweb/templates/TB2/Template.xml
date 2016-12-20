@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<glz:EmptyComponent>
+	<glz:Modifier target="navigation1" attribute="enabled" value="false" />
+	<glz:Modifier target="navigation0" attribute="forceLink" value="true" />
+	<glz:Modifier target="navigation0" attribute="startFrom" value="*parent-1" />
+	<glz:Modifier target="navigation0" attribute="depth" value="+5" />
+	<glz:Modifier target="navigation0" attribute="flat" value="false" />
+	<glz:Modifier target="navigation0" attribute="editableRegion" value="leftSidebar" />
+	<glz:Modifier target="navigation0" attribute="cssClass" value="nav nav-sidebar navigationMenu sideBox" />
+	<glz:Modifier target="navigation0" attribute="showPath" value="true" />
+	<glz:Modifier target="navigation0" attribute="selectLink" value="true" />
+	<glz:Modifier target="navigation0" attribute="selectParent" value="false" reprocess="true" />
+	<glz:Modifier target="metanavigation" attribute="editableRegion" value="languages" />
+	
+	<glz:EmptyComponent id="boxNews">
+		<glz:DataProvider id="boxNewsDP" recordClassName="org.minervaeurope.museoweb.models.News" query="newsHome" />
+		<glz:RecordSetBox id="boxNewsRS" title="{i18n:MW_NEWS}" dataProvider="boxNewsDP" routeUrl="news"  skin="BoxNews.html" />
+	</glz:EmptyComponent>
+	<glz:EmptyComponent id="boxEvents">
+		<glz:DataProvider id="boxEventsDP" recordClassName="org.minervaeurope.museoweb.models.Event" query="eventsHome" />
+		<glz:RecordSetBox id="boxEventsRS" title="{i18n:MW_EVENTS}" dataProvider="boxEventsDP" numRecord="5" routeUrl="events" skin="BoxEvents.html" />
+	</glz:EmptyComponent>
+	<glz:SearchBox id="boxSearch" title="{i18n:MW_SEARCH}" searchPageId="search" skin="BoxSearch.html" />
+</glz:EmptyComponent>

@@ -1,0 +1,12 @@
+<div id="boxNews" class="boxSidebar" tal:condition="php: count(RecordSetBox['records'])">
+	<h3 tal:content="RecordSetBox/title" />
+	<div>
+		<ul>
+			<li tal:repeat="item RecordSetBox/records">
+				<h4 class="date" tal:content="structure item/newsdetail_startDate" />
+				<h4 class="title"><a href="" tal:content="structure item/newsdetail_title" tal:attributes="href item/__url__; structure title item/newsdetail_title">title</a></h4>
+				<p><span tal:omit-tag="" tal:content="structure item/newsdetail_bodyShort" /></p>
+			</li>
+		</ul>
+	</div>
+</div>

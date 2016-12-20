@@ -1,0 +1,132 @@
+<span tal:omit-tag="">
+<div class="details">
+		<h2 tal:content="structure RecordDetail/mountingdetail_title" />
+		<div class="clear spacer"></div>
+		<h3>Informazioni generali</h3>
+		<dl class="properties">
+			<span tal:omit-tag="" tal:condition="php: RecordDetail['mountingdetail_author']!=''">
+				<dt tal:content="structure php: __T('MW_MOUNTING_FORM_AUTHOR')"></dt>
+				<dd tal:content="structure RecordDetail/mountingdetail_author"></dd>
+			</span>
+			<span tal:omit-tag="" tal:condition="php: RecordDetail['mountingdetail_date']!=''">
+				<dt tal:content="structure php: __T('MW_MOUNTING_CREATION_DATE')"></dt>
+				<dd tal:content="structure RecordDetail/mountingdetail_date"></dd>
+			</span>
+			<span tal:omit-tag="" tal:condition="php: RecordDetail['mountingdetail_informationBy']!=''">
+				<dt tal:content="structure php: __T('MW_MOUNTING_INFORMATION_GIVEN_BY')"></dt>
+				<dd tal:content="structure RecordDetail/mountingdetail_informationBy"></dd>
+			</span>
+			<span tal:omit-tag="" tal:condition="php: RecordDetail['mountingdetail_category']!=''">
+				<dt tal:content="structure php: __T('MW_MOUNTING_CATEGORY')"></dt>
+				<dd tal:content="structure RecordDetail/mountingdetail_category"></dd>
+			</span>
+			<span tal:omit-tag="" tal:condition="php: RecordDetail['mountingdetail_type']!=''">
+				<dt tal:content="structure php: __T('MW_MOUNTING_TYPE')"></dt>
+				<dd tal:content="structure RecordDetail/mountingdetail_type"></dd>
+			</span>
+			<span tal:omit-tag="" tal:condition="php: RecordDetail['mountingdetail_region']!=''">
+				<dt tal:content="structure php: __T('MW_MOUNTING_REGION')"></dt>
+				<dd tal:content="structure RecordDetail/mountingdetail_region"></dd>
+			</span>
+			<span tal:omit-tag="" tal:condition="php: RecordDetail['mountingdetail_province']!=''">
+				<dt tal:content="structure php: __T('MW_MOUNTING_PROVINCE')"></dt>
+				<dd tal:content="structure RecordDetail/mountingdetail_province"></dd>
+			</span>
+			<span tal:omit-tag="" tal:condition="php: RecordDetail['mountingdetail_town']!=''">
+				<dt tal:content="structure php: __T('MW_MOUNTING_TOWN')"></dt>
+				<dd tal:content="structure RecordDetail/mountingdetail_town"></dd>
+			</span>
+			<span tal:omit-tag="" tal:condition="php: RecordDetail['mountingdetail_address']!=''">
+				<dt tal:content="structure php: __T('MW_MOUNTING_ADDRESS')"></dt>
+				<dd tal:content="structure RecordDetail/mountingdetail_address"></dd>
+			</span>
+			<span tal:omit-tag="" tal:condition="php: RecordDetail['mountingdetail_legalStatus']!=''">
+				<dt tal:content="structure php: __T('MW_MOUNTING_LEGAL_STATUS')"></dt>
+				<dd tal:content="structure RecordDetail/mountingdetail_legalStatus"></dd>
+			</span>
+			<span tal:omit-tag="" tal:condition="php: RecordDetail['mountingdetail_contact']!=''">
+				<dt tal:content="structure php: __T('MW_MOUNTING_CONTACT_PERSON')"></dt>
+				<dd tal:content="structure RecordDetail/mountingdetail_contact"></dd>
+			</span>
+			<span tal:omit-tag="" tal:condition="php: RecordDetail['mountingdetail_url']!=''">
+				<dt tal:content="structure php: __T('MW_MOUNTING_URL')"></dt>
+				<dd tal:content="structure php: org_glizy_helpers_Link::formatLink(RecordDetail['mountingdetail_url'])"></dd>
+			</span>
+		</dl>
+		<div class="clear"></div>
+		<span tal:omit-tag="" tal:condition="php: !glz_empty(RecordDetail['mountingdetail_bibliography'])">
+			<h4 tal:content="structure php: __T('MW_MOUNTING_BIBLIOGRAPHY')" />
+			<span tal:omit-tag="" tal:content="structure RecordDetail/mountingdetail_bibliography" />
+		</span>
+		
+		<h3 tal:content="structure php: __T('MW_MOUNTING_INFORMATION_ON_THE_PROJECT')" />
+		<span tal:omit-tag="" tal:condition="php: !glz_empty(RecordDetail['mountingdetail_projectPurpose'])">
+			<h4 tal:content="structure php: __T('MW_MOUNTING_PROJECT_AIMS')" />
+			<span tal:omit-tag="" tal:content="structure RecordDetail/mountingdetail_projectPurpose" />
+		</span>
+		<span tal:omit-tag="" tal:condition="php: !glz_empty(RecordDetail['mountingdetail_projectNote1'])">
+			<h4 tal:content="structure php: __T('MW_MOUNTING_EXHIBITION_PLAN')" />
+			<span tal:omit-tag="" tal:content="structure RecordDetail/mountingdetail_projectNote1" />
+		</span>
+		<span tal:omit-tag="" tal:condition="php: !glz_empty(RecordDetail['mountingdetail_projectNote2'])">
+			<h4 tal:content="structure php: __T('MW_MOUNTING_LAYOUT_PLAN')" />
+			<span tal:omit-tag="" tal:content="structure RecordDetail/mountingdetail_projectNote2" />
+		</span>
+		<span tal:omit-tag="" tal:condition="php: !glz_empty(RecordDetail['mountingdetail_projectNote3'])">
+			<h4 tal:content="structure php: __T('MW_MOUNTING_COMMUNICATION_PLAN')" />
+			<span tal:omit-tag="" tal:content="structure RecordDetail/mountingdetail_projectNote3" />
+		</span>
+		<div id="imageList" tal:condition="php: count(RecordDetail['drawings'])">
+			<h4 tal:content="structure php: __T('MW_MOUNTING_DRAWINGS')" />
+			<span tal:omit-tag="" tal:repeat="item RecordDetail/drawings" tal:content="structure item/image_id/__html__" />
+			<div class="clear"></div>
+		</div>
+		<div id="imageList" tal:condition="php: count(RecordDetail['images'])">
+			<h4 tal:content="structure php: __T('MW_MOUNTING_IMAGES')" />
+			<span tal:omit-tag="" tal:repeat="item RecordDetail/images" tal:content="structure item/image_id/__html__" />
+			<div class="clear"></div>
+		</div>
+		<span tal:omit-tag="" tal:condition="php: count(RecordDetail['media'])">
+			<h4 tal:content="php: __T('MW_LINKED_MEDIA')" class="downloadTitle" />
+			<ul class="downloadList">
+				<li tal:repeat="item RecordDetail/media" tal:content="structure item/media_id/__html__" />
+			</ul>
+		</span>
+		<span tal:omit-tag="" tal:condition="php: RecordDetail['mountingdetail_drawingGallery']!=''">
+			<p><a href="" tal:attributes="structure href RecordDetail/mountingdetail_drawingGallery">Vedi la galleria dei disegni</a></p>
+		</span>
+		<span tal:omit-tag="" tal:condition="php: RecordDetail['mountingdetail_photoGallery']!=''">
+			<p><a href="" tal:attributes="structure href RecordDetail/mountingdetail_photoGallery">Vedi la galleria fotografica</a></p>
+		</span>
+		
+		<h3 tal:content="structure php: __T('MW_MOUNTING_WORK_DESCRIPTION')" />
+		<span tal:omit-tag="" tal:condition="php: !glz_empty(RecordDetail['mountingdetail_projectDesigner'])">
+			<h4 tal:content="structure php: __T('MW_MOUNTING_DESIGNERS')" />
+			<span tal:omit-tag="" tal:content="structure RecordDetail/mountingdetail_projectDesigner" />
+		</span>
+		<span tal:omit-tag="" tal:condition="php: !glz_empty(RecordDetail['mountingdetail_projectRestoration'])">
+			<h4 tal:content="structure php: __T('MW_MOUNTING_RESTORATION_PROJECT')" />
+			<span tal:omit-tag="" tal:content="structure RecordDetail/mountingdetail_projectRestoration" />
+		</span>
+		<span tal:omit-tag="" tal:condition="php: !glz_empty(RecordDetail['mountingdetail_projectMounting'])">
+			<h4 tal:content="structure php: __T('MW_MOUNTING_INSTALLATION_PLAN')" />
+			<span tal:omit-tag="" tal:content="structure RecordDetail/mountingdetail_projectMounting" />
+		</span>
+		<span tal:omit-tag="" tal:condition="php: !glz_empty(RecordDetail['mountingdetail_company'])">
+			<h4 tal:content="structure php: __T('MW_MOUNTING_INSTALLATION_COMPANY')" />
+			<span tal:omit-tag="" tal:content="structure RecordDetail/mountingdetail_company" />
+		</span>
+		<span tal:omit-tag="" tal:condition="php: !glz_empty(RecordDetail['mountingdetail_authority'])">
+			<h4 tal:content="structure php: __T('MW_MOUNTING_FUNDING_BODY')" />
+			<span tal:omit-tag="" tal:content="structure RecordDetail/mountingdetail_authority" />
+		</span>
+		<span tal:omit-tag="" tal:condition="php: !glz_empty(RecordDetail['mountingdetail_startMounting'])">
+			<h4 tal:content="structure php: __T('MW_MOUNTING_WORKING_BUDGET')" />
+			<span tal:omit-tag="" tal:content="structure RecordDetail/mountingdetail_startMounting" />
+		</span>
+		<span tal:omit-tag="" tal:condition="php: !glz_empty(RecordDetail['mountingdetail_workSummary'])">
+			<h4 tal:content="structure php: __T('MW_MOUNTING_INTERVENTION_ABSTRACT')" />
+			<span tal:omit-tag="" tal:content="structure RecordDetail/mountingdetail_workSummary" />
+		</span>
+	</div>
+</span>

@@ -1,0 +1,21 @@
+<div id="menuComments">
+	<h4 tal:condition="php: count(Component['records'])>0" tal:content="structure php: __T('MW_BLOG_COMMENTS')" />
+	<span tal:omit-tag="" tal:condition="php: count(Component['records'])>0">
+		<div class="comment" tal:repeat="item Component/records">
+			<p class="commentInfo">
+				<span tal:omit-tag="" tal:content="structure php: __T('MW_BLOG_SEND_FROM')" /> <span class="commentAuthor" tal:content="structure item/author" /> | <span tal:omit-tag="" tal:content="item/menucomment_date" />
+				<span tal:omit-tag="" tal:condition="Component/isAdmin"> | <a href="" tal:attributes="structure href item/__urldelete__;structure onclick php: 'return confirm(\'' . __T('MW_BLOG_DELETE_CONFIRM') .'\')' " tal:content="structure php: __T('MW_BLOG_DELETE')">Cancella</a></span>
+			</p>
+			<span tal:omit-tag="" tal:content="structure item/menucomment_text" />
+		</div>
+	</span>	
+	<div id="menuCommentsForm" tal:condition="php:  Component['isOpen'] EQ 1">
+		<h4 tal:content="structure php: __T('MW_BLOG_ADD_COMMENT')"></h4>
+		<div class="data" tal:content="structure php: __T('MW_BLOG_NO_TAG')"></div>
+		<form id="commentForm" name="commentForm" method="post" action="" autocomplete="off" tal:attributes="action Component/__url__">
+			<input name="action" value="addcomment" type="hidden" />
+			<textarea tabindex="4" id="text" name="text" rows="10" cols="50" class="full"></textarea><br />
+			<input id="post" name="post" type="submit" tal:attributes="structure value php: __T('MW_BLOG_SEND_COMMENT')"/>
+		</form>
+	</div>
+</div>

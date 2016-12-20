@@ -1,0 +1,12 @@
+<div class="panel panel-primary" tal:condition="php: count(RecordSetBox['records'])">
+	<div class="panel-heading">
+		<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>&nbsp;
+		<span class="lead" tal:content="RecordSetBox/title" />
+	</div>
+	<div class="panel-body">
+	<div tal:omit-tag="" tal:repeat="item RecordSetBox/records">
+		<h4><a href="" tal:content="structure item/eventdetail_title" tal:attributes="href item/__url__; structure title item/eventdetail_title"></a></h4>
+		<p class="date"><span tal:omit-tag="" tal:content="structure item/eventdetail_date" /> <span tal:omit-tag="" tal:content="structure item/eventdetail_year" /></p>
+	</div>
+	</div>
+</div>
