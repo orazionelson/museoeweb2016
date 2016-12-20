@@ -1,31 +1,27 @@
-# Museo&Web 2016 XXX
-**Museo&Web** è un CMS distribuito dal [MiBact](http://www.beniculturali.it/) (con licenza GPL 2.0), il progetto ha la particolarit&agrave; di fornire <em>out-of the box</em> una serie di moduli utili per musei, biblioteche, archivi, dipartimenti e centri di ricerca. 
+# [Start Bootstrap](http://startbootstrap.com/) - [Freelancer](http://startbootstrap.com/template-overviews/freelancer/)
 
-&Egrave;, inoltre, un buon esempio di investimento pubblico verso la collettività visto il codice aperto.
+[Freelancer](http://startbootstrap.com/template-overviews/freelancer/) is a one page freelancer portfolio theme for [Bootstrap](http://getbootstrap.com/) created by [Start Bootstrap](http://startbootstrap.com/). This theme features several content sections, a responsive portfolio grid with hover effects, full page portfolio item modals, and a working PHP contact form.
 
-L'ultimo aggiornamento, quindi il rendering delle pagine del CMS, così com'è distribuito, è ancora in XHTML che è uno standard ampiamente superato..
+## Getting Started
 
-Nell'ambito di una collaborazione con il [Centro di Ateneo Per le Biblioteche R. Pettorino dell'Università Federico II di Napoli](http://www.sba.unina.it) per il rinnovo dei siti di diverse biblioteche dell'ateneo ho proposto una serie di ritocchi al CMS così da estenderne le funzionalità e rendere l'aspetto più moderno e leggibile anche da tablet e smartphone.
+To begin using this template, choose one of the following options to get started:
+* [Download the latest release on Start Bootstrap](http://startbootstrap.com/template-overviews/freelancer/)
+* Clone the repo: `git clone https://github.com/BlackrockDigital/startbootstrap-freelancer.git`
+* Fork the repo
 
-Questo *repository* distribuisce pubblicamente una patch per **Museo&Web** che: 
-- completa l'integrazione di [jQuery](https://jquery.com/), con:
-	- fancybox: un plug-in di jquery per la gestione delle gallerie di immagini
-	-  jquery.validationEngine: un plug-in per la validazione dei form
-- integra [twitter Bootstrap](http://getbootstrap.com/). 
+## Bugs and Issues
 
-- aggiunge **NUOVI template** rielaborati partendo dai temi di [bootswatch](https://bootswatch.com/).
+Have a bug or an issue with this template? [Open a new issue](https://github.com/BlackrockDigital/startbootstrap-freelancer/issues) here on GitHub or leave a comment on the [template overview page at Start Bootstrap](http://startbootstrap.com/template-overviews/freelancer/).
 
-## Come installare la patch
-1. Copiare nella root di **M&W** il file: **mw.patch**
-2. Da shell posizionarsi nella root di **M&W** e lanciare la patch:
+## Creator
 
-	<code>patch -p0 < mw.patch</code>
-	
-	**NB:per lanciare la patch occorre avere i permessi in scrittura sui file di M&W**
+Start Bootstrap was created by and is maintained by **[David Miller](http://davidmiller.io/)**, Owner of [Blackrock Digital](http://blackrockdigital.io/).
 
-3. Con phpmyadmin (o equivalente) importare la patch al database: **mw_registry_tbl.sql**
+* https://twitter.com/davidmillerskt
+* https://github.com/davidtmiller
 
-4. Copiare la cartella **static** dentro la vostra root di **M&W**, aggiungendo e non sovrascrivendo il contenuto della cartella **static** di **M&W**.
-5. Scegliere il tema dall'interfaccia di amministrazione di **M&W**.
+Start Bootstrap is based on the [Bootstrap](http://getbootstrap.com/) framework created by [Mark Otto](https://twitter.com/mdo) and [Jacob Thorton](https://twitter.com/fat).
 
-Enjoy
+## Copyright and License
+
+Copyright 2013-2016 Blackrock Digital LLC. Code released under the [MIT](https://github.com/BlackrockDigital/startbootstrap-freelancer/blob/gh-pages/LICENSE) license.

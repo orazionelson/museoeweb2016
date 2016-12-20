@@ -1,1 +1,315 @@
-<h1>prova</h1>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="MUSEOeWeb2016 è un'integrazione al CMS del Mibact che include jQuery e Bootstrap così da poter avere pagine in HTML5, accessibili e responsive.">
+    <meta name="author" content="Alfredo Cosco">
+
+    <title>Museo&amp;Web2016</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/fancybox/jquery.fancybox.css" rel="stylesheet">
+
+    <!-- Theme CSS -->
+    <link href="css/freelancer.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	<link rel="shortcut icon" href="img/favicon.png">
+</head>
+
+<body id="page-top" class="index">
+
+    <!-- Navigation -->
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="#page-top">Museo&amp;Web2016</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#about">About</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#portfolio">Temi</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#howto">How to</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <img class="img-responsive" src="img/front.png" alt="Museo&Web">
+                    <div class="intro-text">
+                        <span class="name">Museo&amp;Web2016</span>
+                        <hr class="star-light">
+							<div class="row">
+								<div class="col-md-3">
+                        	<a href="https://github.com/orazionelson/museoeweb2016/archive/master.zip" class="btn btn-primary btn-lg">
+								<i class="fa fa-download"></i> Scarica il pacchetto 
+							</a>
+								</div>
+								<div class="col-md-6">
+									<span class="skills">Museo&amp;Web - TwitterBootstrap - jQuery</span>
+								</div>
+								<div class="col-md-3">
+                        	<a href="https://github.com/orazionelson/museoeweb2016" class="btn btn-primary btn-lg">
+								<i class="fa fa-github"></i> Vedi repository 
+							</a>
+								</div>
+							</div>
+                        
+                        
+                    </div>                    
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>About</h2>
+                    <hr class="star-primary">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+<p><span class="lead text-primary"><strong>Museo&amp;Web</strong> è un CMS distribuito dal <a href="http://www.beniculturali.it/">MiBact</a></span> (con licenza GPL 2.0), il progetto ha la particolarit&agrave; di fornire <em>out-of the box</em> una serie di moduli utili per musei, biblioteche, archivi, dipartimenti e centri di ricerca. &Egrave;, inoltre, un buon esempio di investimento pubblico verso la collettività visto il codice aperto.</p>
+
+<p>L'ultimo aggiornamento è del 2012, quindi il rendering delle pagine del CMS, così com'è distribuito, è ancora in XHTML, che è uno standard ampiamente superato.</p>
+
+<p>Nell'ambito di una collaborazione con il <a href="http://www.sba.unina.it">Centro di Ateneo Per le Biblioteche "R. Pettorino" dell'Università Federico II di Napoli</a>, per il rinnovo dei siti di diverse biblioteche dell'ateneo ho effettuato una serie di ritocchi al CMS così da estenderne le funzionalità e rendere l'aspetto più moderno e leggibile anche da tablet e smartphone.</p>
+                </div>
+                <div class="col-lg-6">
+<p><a href="https://github.com/orazionelson/museoeweb2016" title="Museo&Web2016">Questo <em>repository</em> <i class="fa fa-github" aria-hidden="true"></i></a> distribuisce pubblicamente una patch per <span class="lead text-primary"><strong>Museo&amp;Web</strong></span> che: </p>
+<ul class="lead">
+	<li>completa l'integrazione di <a href="https://jquery.com/">jQuery</a> con:	
+		<ul>
+			<li><a href="http://fancybox.net/">fancybox</a>: un plug-in di jquery per la gestione delle gallerie di immagini</li>
+			<li><a href="https://github.com/posabsolute/jQuery-Validation-Engine">jquery.validationEngine</a>: un plug-in per la validazione dei form</li>
+		</ul>	
+	</li>
+	<li>integra <a href="http://getbootstrap.com/">twitter Bootstrap</a>.</li>
+	
+	<li>aggiunge <strong>NUOVI template</strong> rielaborati partendo dai temi di <a href="https://bootswatch.com/">bootswatch</a>.</li>
+</ul>
+                </div>
+                               <div class="col-lg-8 col-lg-offset-2 text-center">
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Grid Section -->
+    <section id="portfolio" class="success">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Temi</h2>
+                    <hr class="star-light">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 portfolio-item">
+                    <a href="img/portfolio/flatly.jpg" class="portfolio-link" data-fancybox-group="gallery" title="Flatly Template">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x">Flatly</i>
+                            </div>
+                        </div>
+                        <img src="img/portfolio/flatly_t.jpg" class="center-block img-thumbnail img-responsive" alt="Flatly Template">
+                    </a>
+                </div>
+                <div class="col-sm-4 portfolio-item">
+                    <a href="img/portfolio/united.jpg" class="portfolio-link" data-fancybox-group="gallery" title="United Template">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x">United</i>
+                            </div>
+                        </div>
+                        <img src="img/portfolio/united_t.jpg" class="center-block img-thumbnail img-responsive" alt="United Template">
+                    </a>
+                </div>
+                <div class="col-sm-4 portfolio-item">
+                    <a href="img/portfolio/journal.jpg" class="portfolio-link" data-fancybox-group="gallery" title="Journal Template">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x">Journal</i>
+                            </div>
+                        </div>
+                        <img src="img/portfolio/journal_t.jpg" class="center-block img-thumbnail img-responsive" alt="Journal Template">
+                    </a>
+                </div>
+                <div class="col-sm-4 portfolio-item">
+                    <a href="img/portfolio/cerulean.jpg" class="portfolio-link" data-fancybox-group="gallery" title="Cerulean Template">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x">Cerulean</i>
+                            </div>
+                        </div>
+                        <img src="img/portfolio/cerulean_t.jpg" class="center-block img-thumbnail img-responsive" alt="Cerulean Template">
+                    </a>
+                </div>
+                <div class="col-sm-4 portfolio-item">
+                    <a href="img/portfolio/paper.jpg" class="portfolio-link" data-fancybox-group="gallery" title="Paper Template">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x">Paper</i>
+                            </div>
+                        </div>
+                        <img src="img/portfolio/paper_t.jpg" class="center-block img-thumbnail img-responsive" alt="Paper Template">
+                    </a>
+                </div>
+                <div class="col-sm-4 portfolio-item">
+                    <a href="img/portfolio/simplex.jpg" class="portfolio-link" data-fancybox-group="gallery" title="Simplex Template">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x">Simplex</i>
+                            </div>
+                        </div>
+                        <img src="img/portfolio/simplex_t.jpg" class="center-block img-thumbnail img-responsive" alt="Simplex Template">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- HowTo Section -->
+    <section id="howto">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Come installare la patch</h2>
+                    <hr class="star-primary">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">	
+					<div class="text-center">
+					<a href="https://github.com/orazionelson/museoeweb2016/archive/master.zip" class="btn btn-primary btn-lg">
+                        <i class="fa fa-download"></i> Scarica il pacchetto 
+                    </a>
+                    </div>
+                    <hr>				
+					<ol>
+					<li><p>Copiare nella root di <strong>M&amp;W</strong> il file: <strong>mw.patch</strong></p></li>
+					
+					<li><p>Da shell posizionarsi nella root di <strong>M&amp;W</strong> e lanciare la patch:</p>
+					
+					<p><code>patch -p0 &lt; mw.patch</code></p>
+					
+					<p class="small"><strong>NB: per lanciare la patch occorre avere i permessi in scrittura sui file di M&amp;W</strong></p></li>
+					
+					<li><p>Con phpmyadmin (o equivalente) importare la patch nel database: <strong class="text-success">mw_registry_tbl.sql</strong></p></li>
+					
+					<li><p>Copiare la cartella <strong>static</strong> dentro la root di <strong>M&amp;W</strong>, aggiungendo e non sovrascrivendo il contenuto della cartella <strong>static</strong> di <strong>M&amp;W</strong>.</p></li>
+					
+					<li><p>Scegliere il tema dall'interfaccia di amministrazione di <strong>M&amp;W</strong>.</p></li>
+					</ol>
+				</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="footer-above">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col col-md-4">
+                        <h3>Fork on GitHub</h3>
+						<a href="https://github.com/orazionelson/museoeweb2016" target="_blank" class="btn-social btn-outline"><i class="fa fa-github"></i></a>
+                    </div>
+                    <div class="footer-col col-md-4">
+                        <h3>Share</h3>
+                        <!-- Go to www.addthis.com/dashboard to customize your tools --> 
+                        <div class="addthis_inline_share_toolbox"></div>
+                    </div>
+                    <div class="footer-col col-md-4">
+                        <h3>Contact Me</h3>
+                        <p><a href="mailto:alfredo.cosco@gmail.com" class="btn-social btn-outline">@</a>
+                        <a href="http://www.nelsonweb.it" class="btn-social btn-outline"><i class="fa fa-user"></i></a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-below">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+						theme by <a href="https://startbootstrap.com">https://startbootstrap.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+    <div class="scroll-top page-scroll hidden-sm hidden-xs hidden-lg hidden-md">
+        <a class="btn btn-primary" href="#page-top">
+            <i class="fa fa-chevron-up"></i>
+        </a>
+    </div>
+    
+    <!-- jQuery -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+	<!-- fancybox -->
+    <script src="vendor/fancybox/jquery.fancybox.pack.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function() {
+			$('.portfolio-link').fancybox();
+		});
+	</script>
+
+    <!-- Theme JavaScript -->
+    <script src="js/freelancer.min.js"></script>
+
+	<!-- Go to www.addthis.com/dashboard to customize your tools --> <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5855546a5771c625"></script> 
+
+</body>
+
+</html>
