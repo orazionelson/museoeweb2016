@@ -1,0 +1,17 @@
+<div class="searchResults">
+	<h3 tal:content="structure RecordSetList/title"/>
+	<span tal:omit-tag="" tal:condition="php: count(RecordSetList['records'])">
+		<div tal:repeat="item RecordSetList/records" tal:attributes="class item/__cssClass__">
+			<div class="around">
+				<h4><a href="" tal:attributes="href item/__url__; structure title item/routegroupdetail_title" tal:content="structure item/routegroupdetail_title"></a></h4>
+				<p  tal:content="structure item/routegroupdetail_author"></p>
+			</div>
+		</div>
+	</span>
+	<span tal:omit-tag="" tal:condition="php: !count(RecordSetList['records'])">
+		<div class="around" >
+			<p tal:content="php:__T('MW_NO_RECORD_FOUND')"></p>
+		</div>
+	</span>
+	<div class="clear"></div>
+</div>

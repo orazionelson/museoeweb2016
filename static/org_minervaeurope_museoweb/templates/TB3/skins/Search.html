@@ -1,0 +1,18 @@
+<span tal:omit-tag="">
+	<div class="formItem">
+		<label for="search" tal:content="Search/label" />
+		<input type="text" name="search" id="search" value="" class="long form-control input-sm" tal:attributes="value Search/value"/>
+		<input type="submit" class="btn btn-info btn-sm submitButton" tal:attributes="value Search/buttonLabel"/>
+	</div>
+	<div class="clear"></div>
+	<p tal:content="structure Search/comment" />
+	<div id="searchResult"  tal:condition="php: count(Search['result'])">
+		<h2 tal:content="structure Search/comment1"/>
+		<p tal:content="structure Search/total"/>
+		<ul>
+			<li tal:repeat="item Search/result"><strong tal:content="structure item/__url__"></strong>
+			<p class="small" tal:content="structure item/description" />
+			</li>
+		</ul>
+	</div>
+</span>

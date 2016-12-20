@@ -1,0 +1,91 @@
+div#internalWrap {
+	width: auto; 
+}
+div#leftSidebar {
+	width: 241px;
+}
+
+
+div#rightSidebar{
+	width: 241px;
+}
+
+
+a.moreRight {
+	padding-left: 10px;
+}
+
+.featureBox a.moreRight {
+	padding-right: 0;
+	margin-right: -7px;
+	margin-top: -13px;
+	padding-bottom: 17px;
+}
+
+ul.navigationMenu  li a ,
+ul.navigationMenu  li span {
+   width: 229px;
+}
+
+ul.navigationMenu li span.current,
+ul.navigationMenu li a.current{
+   width: 229px;
+}
+
+
+ul.navigationMenu li ul li a,
+ul.navigationMenu li ul li span {
+   width: 219px;
+}
+
+
+ul.navigationMenu ul li span.current,
+ul.navigationMenu ul li a.current {
+   width: 219px;
+}
+
+
+ul.navigationMenu li ul li ul li a,
+ul.navigationMenu li ul li ul li span {
+   width: 209px;
+}
+
+ul.navigationMenu li ul li ul li span.current, 
+ul.navigationMenu li ul li ul li a.current {
+   width: 209px;
+}
+
+div.navigationMenu2 li {
+	width: 229px;
+}
+
+div.navigationMenu2 ul li ul li,
+div.navigationMenu2 ul li ul li.current {
+	width: 229px;
+}
+
+div.navigationMenu2 ul li ul li ul li,
+div.navigationMenu2 ul li ul li ul li.current {
+	width: 229px;
+}
+
+#boxLogin table {
+	width: 213px;
+}
+
+#boxUser a {
+	width: 229px;
+}
+
+#boxUser h3 {
+	width: 229px;
+}
+
+
+div#rightSidebar {
+	width: 241px;
+}
+
+#content #gallery .box  {
+padding:6px 0pt 0pt;
+}

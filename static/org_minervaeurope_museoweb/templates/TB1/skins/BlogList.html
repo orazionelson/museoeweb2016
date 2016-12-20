@@ -1,0 +1,11 @@
+<div id="blog" tal:condition="php:count(Component['records'])">
+	<span tal:omit-tag="" tal:repeat="item Component/records">
+		<h3><a href="" tal:content="structure item/blogpost_title" tal:attributes="structure href item/__url__; structure title item/blogpost_title"></a></h3>
+		<span tal:omit-tag="" tal:content="structure item/blogpost_text" />
+		<p class="postInfo"><span tal:omit-tag="" tal:content="structure php: __T('MW_BLOG_POSTED_BY')" />: <span class="blogAuthor" tal:content="structure item/author" /> | <span tal:omit-tag="" tal:content="item/blogpost_date" /> | <span tal:omit-tag="" tal:content="structure item/categories" /> | <a href="" tal:attributes="href item/__url__; title item/blogpost_title" tal:content="structure php: __T('MW_BLOG_PERMALINK')"></a> | <span tal:omit-tag="" tal:content="structure php: __T('MW_BLOG_COMMENTS')" /> (<span tal:omit-tag="" tal:content="item/comments" />)</p>
+	</span>
+	<div class="navigation" tal:condition="php: ( Component['prevPage']!='' OR Component['nextPage']!='' )">
+		<a tal:condition="php: Component['prevPage']!=''" class="command" tal:attributes="structure href Component/prevPage" style="float: left;">&lt;&lt; <span tal:omit-tag="" tal:content="structure php:__T('MW_PREVIOUS_PAGE')" /></a>
+		<a tal:condition="php: Component['nextPage']!=''" class="command" tal:attributes="structure href Component/nextPage" style="float: right;"><span tal:omit-tag="" tal:content="structure php:__T('MW_NEXT_PAGE')" /> &gt;&gt;</a>
+	</div>
+</div>

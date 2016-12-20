@@ -1,0 +1,9 @@
+<div class="sideBox" id="boxSearch">
+		<form role="form" class="form-inline" method="post" action="" tal:attributes="action SearchBox/__url__">
+			<div class="form-group">
+			<!--label for="searchSidebar" tal:content="SearchBox/label" /-->
+			<input type="text" name="search" id="searchSidebar" class="form-control input-sm" tal:attributes="value SearchBox/value" tal:attributes="placeholder SearchBox/label"/>
+			</div>
+			<input type="submit" class="btn btn-primary btn-sm" tal:attributes="value SearchBox/buttonLabel" />
+		</form> 
+</div>

@@ -1,0 +1,25 @@
+<div class="searchResults" tal:condition="php: !is_null(RecordSetList['records'])">
+	<h3 tal:content="structure RecordSetList/title"/>
+	<span tal:omit-tag="" tal:condition="php: count(RecordSetList['records'])">
+		<div tal:repeat="item RecordSetList/records" tal:attributes="class item/__cssClass__">
+			<div class="left" tal:condition="php: item['touristroutedetail_map']['mediaId'] gt 0">
+				<a href="" tal:attributes="href item/__url__; structure title item/touristroutedetail_name"><span tal:omit-tag="" tal:content="structure item/touristroutedetail_map/__html__" /></a>
+			</div>
+			<div class="right">
+				<h4><a href="" tal:attributes="href item/__url__; structure title item/touristroutedetail_name" tal:content="structure item/touristroutedetail_name">Antica trireme</a></h4>
+				<span tal:omit-tag="" tal:condition="item/touristroutedetail_category"><span tal:omit-tag="" tal:content="structure item/touristroutedetail_category" />, </span>
+				<span tal:omit-tag="" tal:condition="item/touristroutedetail_country"><span tal:omit-tag="" tal:content="structure item/touristroutedetail_country" />, </span>
+				<span tal:omit-tag="" tal:condition="item/touristroutedetail_region"><span tal:omit-tag="" tal:content="structure item/touristroutedetail_region" />, </span>
+				<span tal:omit-tag="" tal:condition="item/touristroutedetail_province"><span tal:omit-tag="" tal:content="structure item/touristroutedetail_province" /></span>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div class="clear"></div>
+	</span>
+	<span tal:omit-tag="" tal:condition="php: !count(RecordSetList['records'])">
+		<div class="around" >
+			<p tal:content="php:__T('MW_NO_RECORD_FOUND')"></p>
+		</div>
+	</span>
+	<div class="clear"></div>
+</div>

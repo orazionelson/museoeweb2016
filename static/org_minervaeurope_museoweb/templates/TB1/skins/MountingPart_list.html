@@ -1,0 +1,22 @@
+<div class="searchResults" tal:condition="php: !is_null(RecordSetList['records'])">
+	<span tal:omit-tag="" tal:condition="php: count(RecordSetList['records'])">
+		<h3 tal:content="structure RecordSetList/title"/>
+		<div tal:repeat="item RecordSetList/records" tal:attributes="class item/__cssClass__">
+			<div class="left" tal:condition="php: item['mountingpartdetail_FK_media_id']['mediaId'] gt 0">
+				<span tal:omit-tag="" tal:content="structure item/mountingpartdetail_FK_media_id/__html__" />
+			</div>
+			<div class="right">
+				<h4 tal:content="structure item/mountingpartdetail_title"></h4>
+				<p tal:condition="item/mountingpartdetail_category"><strong tal:content="structure php: __T('MW_MOUNTING_CATEGORY')"></strong>:&nbsp;<span tal:omit-tag="" tal:content="structure item/mountingpartdetail_category" /></p>
+				<p tal:condition="item/mountingpartdetail_type"><strong tal:content="structure php: __T('MW_MOUNTING_TYPE')"></strong>:&nbsp;<span tal:omit-tag="" tal:content="structure item/mountingpartdetail_type" /></p>
+				<p tal:condition="item/mountingpartdetail_material"><strong tal:content="structure php: __T('MW_MOUNTING_MATERIAL')"></strong>:&nbsp;<span tal:omit-tag="" tal:content="structure item/mountingpartdetail_material" /></p>
+				<span tal:omit-tag="" tal:condition="php: !glz_empty(item['mountingpartdetail_description'])">
+					<span tal:omit-tag="" tal:content="structure item/mountingpartdetail_description" />
+				</span>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div class="clear"></div>
+	</span>
+	<div class="clear"></div>
+</div>

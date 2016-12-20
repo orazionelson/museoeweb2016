@@ -1,0 +1,40 @@
+<span tal:omit-tag="">
+	<div class="details">
+		<h2 tal:content="structure RecordDetail/regulationdetail_title" />
+		<div class="clear spacer"></div>
+		<dl class="properties">
+			<span tal:omit-tag="" tal:condition="php: RecordDetail['regulationdetail_type']!=''">
+				<dt tal:content="structure php: __T('MW_REGULATION_TYPE')"></dt>
+				<dd tal:content="structure RecordDetail/regulationdetail_type"></dd>
+			</span>
+			<span tal:omit-tag="" tal:condition="php: RecordDetail['regulationdetail_code']!=''">
+				<dt tal:content="structure php: __T('MW_REGULATION_CODE')"></dt>
+				<dd tal:content="structure RecordDetail/regulationdetail_code"></dd>
+			</span>
+			<span tal:omit-tag="" tal:condition="php: RecordDetail['regulationdetail_date']!=''">
+				<dt tal:content="structure php: __T('MW_REGULATION_OFFICE')"></dt>
+				<dd tal:content="structure RecordDetail/regulationdetail_date"></dd>
+			</span>
+			<span tal:omit-tag="" tal:condition="php: RecordDetail['regulationdetail_pubdate']!=''">
+				<dt tal:content="structure php: __T('MW_REGULATION_PUBDATE')"></dt>
+				<dd tal:content="structure RecordDetail/regulationdetail_pubdate"></dd>
+			</span>
+			<span tal:omit-tag="" tal:condition="php: RecordDetail['regulationdetail_pubtype']!=''">
+				<dt tal:content="structure php: __T('MW_REGULATION_PUBTYPE')"></dt>
+				<dd tal:content="structure RecordDetail/regulationdetail_pubtype"></dd>
+			</span>
+			<span tal:omit-tag="" tal:condition="php: !glz_empty(RecordDetail['regulationdetail_url'])">
+				<dt></dt>
+				<dd tal:content="structure php: org_glizy_helpers_Link::formatLink(RecordDetail['regulationdetail_url'])"></dd>
+			</span>
+		</dl>
+		<div class="clear"></div>
+		<span tal:omit-tag="" tal:condition="php: !glz_empty(RecordDetail['regulationdetail_note'])" tal:content="structure RecordDetail/regulationdetail_note" />
+		<span tal:omit-tag="" tal:condition="php: count(RecordDetail['media'])">
+			<h4 tal:content="php: __T('MW_LINKED_MEDIA')" class="downloadTitle" />
+			<ul class="downloadList">
+				<li tal:repeat="item RecordDetail/media" tal:content="structure item/media_id/__html__" />
+			</ul>
+		</span>
+	</div>
+</span>

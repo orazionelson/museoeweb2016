@@ -1,0 +1,99 @@
+<span tal:omit-tag="">
+	<div class="details">
+		<h2 tal:content="structure RecordDetail/touristroutedetail_name"></h2>
+		<div class="clear spacer"></div>
+		<span tal:omit-tag="" tal:condition="php: RecordDetail['touristroutedetail_map']['mediaId'] gt 0" tal:content="structure RecordDetail/touristroutedetail_map/__html__" />
+		<dl class="properties">
+			<span tal:omit-tag="" tal:condition="php: RecordDetail['touristroutedetail_category']!=''">
+				<dt tal:content="structure php: __T('MW_TR_CATEGORY')"></dt>
+				<dd tal:content="structure RecordDetail/touristroutedetail_category"></dd>
+			</span>
+			<span tal:omit-tag="" tal:condition="php: RecordDetail['touristroutedetail_country']!=''">
+				<dt tal:content="structure php: __T('MW_TR_COUNTRY')"></dt>
+				<dd tal:content="structure RecordDetail/touristroutedetail_country"></dd>
+			</span>
+			<span tal:omit-tag="" tal:condition="php: RecordDetail['touristroutedetail_region']!=''">
+				<dt tal:content="structure php: __T('MW_TR_REGION')"></dt>
+				<dd tal:content="structure RecordDetail/touristroutedetail_region"></dd>
+			</span>
+			<span tal:omit-tag="" tal:condition="php: RecordDetail['touristroutedetail_province']!=''">
+				<dt tal:content="structure php: __T('MW_TR_PROVINCE')"></dt>
+				<dd tal:content="structure RecordDetail/touristroutedetail_province"></dd>
+			</span>
+			<span tal:omit-tag="" tal:condition="php: RecordDetail['touristroutedetail_town']!=''">
+				<dt tal:content="structure php: __T('MW_TR_TOWN')"></dt>
+				<dd tal:content="structure RecordDetail/touristroutedetail_town"></dd>
+			</span>
+			<span tal:omit-tag="" tal:condition="php: RecordDetail['touristroutedetail_length']!=''">
+				<dt tal:content="structure php: __T('MW_TR_LENGTH')"></dt>
+				<dd tal:content="structure RecordDetail/touristroutedetail_length"></dd>
+			</span>
+			<span tal:omit-tag="" tal:condition="php: RecordDetail['touristroutedetail_timelength']!=''">
+				<dt tal:content="structure php: __T('MW_TR_TIMELENGTH')"></dt>
+				<dd tal:content="structure RecordDetail/touristroutedetail_timelength"></dd>
+			</span>
+			<span tal:omit-tag="" tal:condition="php: RecordDetail['touristroutedetail_difficulty']!=''">
+				<dt tal:content="structure php: __T('MW_TR_DIFFICULTY')"></dt>
+				<dd tal:content="structure RecordDetail/touristroutedetail_difficulty"></dd>
+			</span>
+			<span tal:omit-tag="" tal:condition="php: RecordDetail['touristroutedetail_compilationDate']!=''">
+				<dt tal:content="structure php: __T('MW_TR_COMPILATIONDATE')"></dt>
+				<dd tal:content="structure RecordDetail/touristroutedetail_compilationDate"></dd>
+			</span>
+			<span tal:omit-tag="" tal:condition="php: RecordDetail['touristroutedetail_author']!=''">
+				<dt tal:content="structure php: __T('MW_TR_AUTHOR')"></dt>
+				<dd tal:content="structure RecordDetail/touristroutedetail_author"></dd>
+			</span>
+		</dl>
+		<div class="clear"></div>
+		<span tal:omit-tag="" tal:condition="php: !glz_empty(RecordDetail['touristroutedetail_path'])">
+			<h3 tal:content="structure php: __T('MW_TR_PATH')" />
+			<span tal:omit-tag="" tal:content="structure RecordDetail/touristroutedetail_path" />
+		</span>
+		<span tal:omit-tag="" tal:condition="php: !glz_empty(RecordDetail['touristroutedetail_description'])">
+			<h3 tal:content="structure php: __T('MW_TR_DESCRIPTION')" />
+			<span tal:omit-tag="" tal:content="structure RecordDetail/touristroutedetail_description" />
+		</span>
+		<span tal:omit-tag="" tal:condition="php: !glz_empty(RecordDetail['touristroutedetail_touristInfo'])">
+			<h3 tal:content="structure php: __T('MW_TR_TOURISTINFO')" />
+			<span tal:omit-tag="" tal:content="structure RecordDetail/touristroutedetail_touristInfo" />
+		</span>
+		<span tal:omit-tag="" tal:condition="php: !glz_empty(RecordDetail['touristroutedetail_bibliography'])">
+			<h3 tal:content="structure php: __T('MW_TR_BIBLIOGRAPHY')" />
+			<span tal:omit-tag="" tal:content="structure RecordDetail/touristroutedetail_bibliography" />
+		</span>
+	</div>
+	<div class="searchResults" tal:condition="php: count(RecordDetail['sites'])">
+		<h3 tal:content="php: __T('MW_TR_TOURISTSITES')"/>
+		<div tal:repeat="item RecordDetail/sites" tal:attributes="class item/__cssClass__">
+			<div class="left" tal:condition="php: is_array(item['image'])">
+				<a href="" tal:attributes="href item/__url__; structure title item/touristsitedetail_name"><img tal:attributes="src item/image/thumbnailSrc;structure alt item/image/title;structure title item/image/title;onclick item/image/onClick;width item/image/thumbnailWidth;height item/image/thumbnailHeight;style item/image/style; class item/image/class"/></a>
+			</div>
+			<div class="right">
+				<h4><a href="" tal:attributes="href item/__url__; structure title item/touristsitedetail_name" tal:content="structure item/touristsitedetail_name"></a></h4>
+				<span tal:omit-tag="" tal:condition="item/touristsitedetail_category"><span tal:omit-tag="" tal:content="structure item/touristsitedetail_category" />, </span>
+				<span tal:omit-tag="" tal:condition="item/touristsitedetail_country"><span tal:omit-tag="" tal:content="structure item/touristsitedetail_country" />, </span>
+				<span tal:omit-tag="" tal:condition="item/touristsitedetail_region"><span tal:omit-tag="" tal:content="structure item/touristsitedetail_region" />, </span>
+				<span tal:omit-tag="" tal:condition="item/touristsitedetail_province"><span tal:omit-tag="" tal:content="structure item/touristsitedetail_province" /></span>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<div class="searchResults" tal:condition="php: count(RecordDetail['catalogs'])">
+		<h3 tal:content="php: __T('MW_CATALOG_LINKED')"/>
+		<div tal:repeat="item RecordDetail/catalogs" tal:attributes="class item/__cssClass__" tal:condition="php: !is_null(item)">
+			<div class="left" tal:condition="php: item['catalogdetail_image1']['mediaId'] gt 0">
+				<a href="" tal:attributes="href item/__url__; structure title item/catalogdetail_title"><span tal:omit-tag="" tal:content="structure item/catalogdetail_image1/__html__" /></a>
+			</div>
+			<div class="right">
+				<h4><a href="" tal:attributes="href item/__url__; title item/catalogdetail_title" tal:content="structure item/catalogdetail_title"></a></h4>
+				<p tal:condition="item/catalogdetail_place"><strong tal:content="structure php: __T('MW_CATALOG_CITY')"></strong>:&nbsp;<span tal:omit-tag="" tal:content="structure item/catalogdetail_place" /></p>
+				<p tal:condition="item/catalogdetail_date"><strong tal:content="structure php: __T('MW_CATALOG_DATE2')"></strong>:&nbsp;<span tal:omit-tag="" tal:content="structure item/catalogdetail_date" /></p>
+				<p tal:condition="item/catalogdetail_author"><strong tal:content="structure php: __T('MW_CATALOG_AUTHOR')"></strong>:&nbsp;<span tal:omit-tag="" tal:content="structure item/catalogdetail_author" /></p>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div class="clear"></div>
+	</div>
+</span>
