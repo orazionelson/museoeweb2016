@@ -1,5 +1,0 @@
-<span tal:omit-tag="" tal:condition="RecordDetail">
-	<span tal:omit-tag="" tal:define="description php:MW_addImageInsideParagraph(RecordDetail['glossarydetail_definition'], RecordDetail['glossarydetail_image'], 'thumb')"/>
-	<h3 tal:content="structure RecordDetail/glossarydetail_term" ></h3>
-	<span tal:omit-tag="" tal:content="structure description" />
-</span>

@@ -1,5 +1,0 @@
-<div id="blog">
-	<h3 tal:content="structure Post/blogpost_title"  />
-	<span tal:omit-tag="" tal:content="structure Post/blogpost_text" />
-	<p class="postInfo"><span tal:omit-tag="" tal:content="structure php: __T('MW_BLOG_POSTED_BY')" />: <span class="blogAuthor" tal:content="structure Post/author" /> | <span tal:omit-tag="" tal:content="Post/blogpost_date" /> | <span tal:omit-tag="" tal:content="structure Post/categories" /> | <a href="" tal:attributes="href Post/__url__; title Post/blogpost_title" tal:content="structure php: __T('MW_BLOG_PERMALINK')"></a></p>
-</div>
