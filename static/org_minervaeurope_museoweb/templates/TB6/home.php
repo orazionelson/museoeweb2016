@@ -111,6 +111,7 @@
 </div>
 <?php print($tail) ?>
 	<script src="assets/javascripts/bootstrap.min.js"></script>
+	<script type='text/javascript' src='http://code.farfalla-project.org/farfalla.js'></script>
 	<script>
 	$( document ).ready(function() {
 	    $('#boxUser a').css('background', 'none');
@@ -126,7 +127,12 @@
 
 	    $("#share").append($(".addthis_toolbox"));
 	    $("#searcharea").append($('#boxSearch'));
+	    
+	    $.cookieBar({
+			fixed: true
+			});
 	});
 	</script>
+
 </body>
 </html>

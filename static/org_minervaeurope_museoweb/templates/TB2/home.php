@@ -105,6 +105,7 @@
 </div>
 <?php print($tail) ?>
 	<script src="assets/javascripts/bootstrap.min.js"></script>
+	<script type="text/javascript" src="assets/javascripts/jquery.cookiebar.js"></script>
 	<script>
 	$( document ).ready(function() {
 	    $('#navigation0').addClass('col-md-3');
@@ -126,6 +127,9 @@
 	    $(".footBox .well").css('height',maxh);
 	    $("#share").append($(".addthis_toolbox"));
 	    $("#searcharea").append($('#boxSearch'));
+	    $.cookieBar({
+			fixed: true
+			});
 	});
 	</script>
 </body>

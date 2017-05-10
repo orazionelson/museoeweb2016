@@ -109,7 +109,10 @@
 		    $(".navbar").css("background-color","D9230F");
 		    $("#pillow").css("margin-top","50px");
 		    $("#share").append($(".addthis_toolbox"));
-		    $("#searcharea").append($('#boxSearch'));//.addClass('col-md-3');
+		    $("#searcharea").append($('#boxSearch'));
+			$.cookieBar({
+				fixed: true
+				});		    
 		});
 		</script>
 

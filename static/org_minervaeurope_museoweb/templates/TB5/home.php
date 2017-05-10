@@ -90,9 +90,13 @@
 </div>
 <?php print($tail) ?>
 		<script src="assets/javascripts/bootstrap.min.js"></script>
+		<script type="text/javascript" src="assets/javascripts/jquery.cookiebar.js"></script>		
 		<script>
 		$( document ).ready(function() {
 			$("#share").append($(".addthis_toolbox"));
+			$.cookieBar({
+				fixed: true
+			});			
 		});
 		</script>
 </body>

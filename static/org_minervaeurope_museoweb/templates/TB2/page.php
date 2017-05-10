@@ -89,6 +89,7 @@
 </div>
 <?php print($tail) ?>
 	<script src="assets/javascripts/bootstrap.min.js"></script>
+	<script type="text/javascript" src="assets/javascripts/jquery.cookiebar.js"></script>	
 		<script>
 	$( document ).ready(function() {
 	    var h=[];
@@ -102,7 +103,10 @@
 	    $(".footBox .well").css('height',maxh);
 	    $("#pillow").css("margin-top","10px");
 	    $("#share").append($(".addthis_toolbox"));
-	    $("#searcharea").append($('#boxSearch'));//.addClass('col-md-3');
+	    $("#searcharea").append($('#boxSearch'));
+	    $.cookieBar({
+			fixed: true
+			});	    
 	});
 	</script>
 
